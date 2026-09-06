@@ -6,9 +6,7 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-          dolores numquam iusto Ratione earum ducimus autem id iure pariatur
-          dolorum quae maiores.
+          I'm Bhavishay, a passionate developer driven by clean code and creative problem-solving. Proficient in Python, Java, HTML, and CSS, I engineer modern web applications and robust software systems that blend high performance with smooth, intuitive user experiences.
         </p>
       </div>
     </div>

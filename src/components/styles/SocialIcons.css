@@ -3,9 +3,10 @@
   max-width: var(--cMaxWidth);
   width: var(--cWidth);
   bottom: 0;
-  z-index: 99;
+  z-index: 9999;
   left: 50%;
   transform: translateX(-50%);
+  pointer-events: none;
 }
 .social-icons {
   position: absolute;
@@ -14,8 +15,9 @@
   display: none;
   flex-direction: column;
   gap: 8px;
-  z-index: 999;
+  z-index: 10000;
   padding: 10px;
+  pointer-events: auto;
 }
 .social-icons:hover {
   transition: 0.3s;
@@ -47,6 +49,7 @@
   position: absolute;
   z-index: 99;
   display: flex;
+  pointer-events: auto;
   gap: 5px;
   bottom: 40px;
   right: 0;

@@ -30,13 +30,14 @@ const WorkImage = (props: Props) => {
         onMouseLeave={() => setIsVideo(false)}
         target="_blank"
         data-cursor={"disable"}
+        draggable={false}
       >
         {props.link && (
           <div className="work-link">
             <MdArrowOutward />
           </div>
         )}
-        <img src={props.image} alt={props.alt} />
+        <img src={props.image} alt={props.alt} draggable={false} />
         {isVideo && <video src={video} autoPlay muted playsInline loop></video>}
       </a>
     </div>

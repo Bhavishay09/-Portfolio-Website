@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+    <defs>
+      <linearGradient id="grad-project-6" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.8"/>
+        <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.8"/>
+      </linearGradient>
+      <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.3"/>
+        <stop offset="100%" stop-color="transparent"/>
+      </linearGradient>
+    </defs>
+    <rect width="800" height="500" rx="24" fill="#150a18"/>
+    <rect x="2" y="2" width="796" height="496" rx="22" fill="none" stroke="url(#grad-project-6)" stroke-width="2" stroke-opacity="0.4"/>
+    
+    <!-- Header bar -->
+    <rect x="40" y="40" width="720" height="50" rx="12" fill="#ffffff" fill-opacity="0.05"/>
+    <circle cx="70" cy="65" r="7" fill="#ff5f56"/>
+    <circle cx="95" cy="65" r="7" fill="#ffbd2e"/>
+    <circle cx="120" cy="65" r="7" fill="#27c93f"/>
+    <text x="730" y="70" fill="#f43f5e" font-family="monospace" font-size="14" font-weight="bold" text-anchor="end">Three.js • Rapier Physics • WebGL</text>
+
+    <!-- Project Title -->
+    <text x="50" y="160" fill="#ffffff" font-family="sans-serif" font-size="34" font-weight="bold">Interactive 3D Experience</text>
+    
+    <!-- Code Editor Card -->
+    <rect x="50" y="200" width="700" height="240" rx="16" fill="#000000" fill-opacity="0.5" stroke="#ffffff" stroke-opacity="0.1"/>
+    <rect x="50" y="200" width="700" height="4" fill="url(#grad-project-6)"/>
+    
+    <!-- Code Text -->
+    <text x="80" y="250" fill="#88c0d0" font-family="monospace" font-size="18">const canvas = new Canvas({ shadows: true });</text><text x="80" y="285" fill="#88c0d0" font-family="monospace" font-size="18">const physics = new RapierPhysics();</text><text x="80" y="320" fill="#88c0d0" font-family="monospace" font-size="18">scene.add(physics);</text>
+
+    <!-- Live Badge -->
+    <rect x="630" y="380" width="100" height="36" rx="18" fill="url(#grad-project-6)"/>
+    <text x="680" y="403" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">bhavishay09</text>
+  </svg>

@@ -111,8 +111,8 @@ export function setCharTimeline(
       tl3
         .fromTo(
           ".character-model",
-          { y: "0%" },
-          { y: "-100%", duration: 4, ease: "none", delay: 1 },
+          { y: "0%", autoAlpha: 1 },
+          { y: "-100%", autoAlpha: 0, duration: 4, ease: "none", delay: 1 },
           0
         )
         .fromTo(".whatIDO", { y: 0 }, { y: "15%", duration: 2 }, 0)
@@ -133,6 +133,20 @@ export function setCharTimeline(
 }
 
 export function setAllTimeline() {
+  // Ensure character model is completely hidden and unclickable once career section and lower are reached
+  ScrollTrigger.create({
+    trigger: ".career-section",
+    start: "top 80%",
+    onEnter: () => {
+      gsap.set(".character-model", { autoAlpha: 0, pointerEvents: "none" });
+    },
+    onLeaveBack: () => {
+      if (window.innerWidth > 1024) {
+        gsap.set(".character-model", { autoAlpha: 1 });
+      }
+    },
+  });
+
   const careerTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: ".career-section",

@@ -108,33 +108,13 @@
   left: 50%;
   z-index: 0;
   bottom: 50px;
-  pointer-events: inherit;
+  pointer-events: none;
 }
 .character-model::after {
-  content: "";
-  width: 100vw;
-  height: 250px;
-  background-image: linear-gradient(
-    to bottom,
-    transparent,
-    var(--backgroundColor) 70%
-  );
-  bottom: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9;
-  position: absolute;
+  display: none;
 }
 .character-model::before {
-  content: "";
-  width: 100vw;
-  height: 700px;
-  background-color: var(--backgroundColor);
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9;
-  position: absolute;
+  display: none;
 }
 .character-loaded .character-rim {
   animation: backlight 3s forwards;
@@ -178,6 +158,31 @@
   font-weight: 500;
   font-family: "Geist", sans-serif;
 }
+.landing-sub-badges {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.landing-sub-badges .skill-pill {
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(194, 164, 255, 0.08);
+  border: 1px solid rgba(194, 164, 255, 0.25);
+  color: #e5d8ff;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.landing-sub-badges .skill-pill:hover {
+  background: rgba(194, 164, 255, 0.2);
+  border-color: #c2a4ff;
+  box-shadow: 0 0 15px rgba(194, 164, 255, 0.35);
+  transform: translateY(-2px);
+}
 
 /* .landing-intro h1 span {
    font-weight: 200; 
@@ -189,60 +194,60 @@
   transform: translateX(50%);
   bottom: 40px;
   top: inherit;
-  z-index: 9;
+  z-index: 10;
+  width: max-content;
+  max-width: 90vw;
 }
 .landing-info h3 {
-  font-size: 22px;
+  font-size: 20px;
   letter-spacing: 2px;
   font-weight: 300;
   color: var(--accentColor);
   margin: 0;
+  margin-bottom: 6px;
+  text-transform: uppercase;
 }
 .landing-info h2 {
   margin: 0;
-  margin-top: -20px;
-  margin-left: 20px;
   font-family: "Geist", sans-serif;
   font-weight: 600;
-  font-size: 32px;
-  line-height: 40px;
   position: relative;
   display: flex;
   flex-wrap: nowrap;
   text-transform: uppercase;
   letter-spacing: 2px;
-}
-.landing-h2-info-1 {
-  position: absolute;
-  top: 0;
+  white-space: nowrap;
 }
 h2.landing-info-h2 {
   color: #c481ff;
-  font-size: 42px;
-  width: 120%;
+  font-size: 38px;
+  line-height: 1.15;
   margin: 0;
-  font-family: "Geist", sans-serif;
-  font-weight: 600;
+  width: auto;
   position: relative;
-  margin-left: -5px;
+  text-shadow: 0 0 25px rgba(196, 129, 255, 0.45), 0 0 50px rgba(196, 129, 255, 0.2);
 }
+h2.landing-h2-developer,
+.landing-info h2:not(.landing-info-h2) {
+  color: #ffffff;
+  font-size: 32px;
+  line-height: 1.15;
+  margin: 0;
+  margin-top: 6px;
+  width: auto;
+  position: relative;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+.landing-h2-info-1,
 .landing-h2-2 {
   position: absolute;
   top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 .landing-info-h2::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 120%;
-  z-index: 3;
-  background-image: linear-gradient(
-    0deg,
-    var(--backgroundColor) 40%,
-    rgba(0, 0, 0, 0) 110%
-  );
-  top: 0;
-  left: 0;
+  display: none !important;
 }
 @media screen and (min-width: 500px) {
   .landing-circle2 {
@@ -253,6 +258,7 @@ h2.landing-info-h2 {
   }
   .landing-info h3 {
     font-size: 18px;
+    margin-bottom: 6px;
   }
   .landing-intro h2 {
     font-size: 18px;
@@ -261,12 +267,17 @@ h2.landing-info-h2 {
     font-size: 30px;
     line-height: 30px;
   }
-  .landing-info h2 {
-    font-size: 35px;
-    line-height: 40px;
-  }
   h2.landing-info-h2 {
     font-size: 38px;
+    line-height: 1.15;
+    margin: 0;
+  }
+  h2.landing-h2-developer,
+  .landing-info h2:not(.landing-info-h2) {
+    font-size: 32px;
+    line-height: 1.15;
+    margin: 0;
+    margin-top: 6px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -281,22 +292,29 @@ h2.landing-info-h2 {
     line-height: 35px;
   }
   .landing-info h3 {
-    font-size: 25px;
-  }
-  .landing-info h2 {
-    font-size: 45px;
-    line-height: 42px;
+    font-size: 22px;
+    margin-bottom: 8px;
   }
   h2.landing-info-h2 {
-    font-size: 55px;
+    font-size: 50px;
+    line-height: 1.15;
+    margin: 0;
+  }
+  h2.landing-h2-developer,
+  .landing-info h2:not(.landing-info-h2) {
+    font-size: 42px;
+    line-height: 1.15;
+    margin: 0;
+    margin-top: 8px;
   }
 }
 @media screen and (min-width: 1025px) {
   .character-model {
     height: 100vh;
     bottom: 0;
-    z-index: 11;
+    z-index: 2;
     position: fixed;
+    pointer-events: none;
   }
   .character-model::after,
   .character-model::before {
@@ -311,12 +329,30 @@ h2.landing-info-h2 {
 
   .landing-info {
     bottom: auto;
-    top: 51%;
-    z-index: inherit;
+    top: 50%;
+    z-index: 10;
     text-align: left;
     transform: translate(0%, -50%);
     right: auto;
-    left: 66%;
+    left: 64%;
+    width: max-content;
+    max-width: 34vw;
+  }
+  .landing-info h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  h2.landing-info-h2 {
+    font-size: 54px;
+    line-height: 1.15;
+    margin: 0;
+  }
+  h2.landing-h2-developer,
+  .landing-info h2:not(.landing-info-h2) {
+    font-size: 46px;
+    line-height: 1.15;
+    margin: 0;
+    margin-top: 10px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -329,12 +365,26 @@ h2.landing-info-h2 {
 
   .landing-info {
     bottom: auto;
-    top: 51%;
-    z-index: inherit;
+    top: 50%;
+    z-index: 10;
     text-align: left;
     transform: translate(0%, -50%);
     right: auto;
-    left: 70%;
+    left: 65%;
+    width: max-content;
+    max-width: 33vw;
+  }
+  h2.landing-info-h2 {
+    font-size: 58px;
+    line-height: 1.15;
+    margin: 0;
+  }
+  h2.landing-h2-developer,
+  .landing-info h2:not(.landing-info-h2) {
+    font-size: 50px;
+    line-height: 1.15;
+    margin: 0;
+    margin-top: 10px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -345,14 +395,24 @@ h2.landing-info-h2 {
     font-size: 60px;
     line-height: 55px;
   }
-  .landing-info h3 {
-    font-size: 35px;
+  .landing-info {
+    left: 66%;
+    max-width: 32vw;
   }
-  .landing-info h2 {
-    font-size: 65px;
-    line-height: 62px;
+  .landing-info h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
   }
   h2.landing-info-h2 {
-    font-size: 75px;
+    font-size: 72px;
+    line-height: 1.15;
+    margin: 0;
+  }
+  h2.landing-h2-developer,
+  .landing-info h2:not(.landing-info-h2) {
+    font-size: 60px;
+    line-height: 1.15;
+    margin: 0;
+    margin-top: 14px;
   }
 }

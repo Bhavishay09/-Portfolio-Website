@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+    <rect width="512" height="512" rx="100" fill="#0f141c"/>
+    <g transform="translate(106, 106) scale(0.585)">
+      <path fill="url(#python-blue)" d="M245.5 0c-40.3 0-77.5 16.5-104 43-26.6 26.5-43 63.7-43 104v42.5h147v42.5H102c-40.3 0-77.5 16.5-104 43-26.6 26.5-43 63.7-43 104 0 40.3 16.5 77.5 43 104 26.5 26.6 63.7 43 104 43h57v-63.5c0-40.3 16.5-77.5 43-104 26.5-26.6 63.7-43 104-43h147v-42.5H348.5c-40.3 0-77.5-16.5-104-43-26.6-26.5-43-63.7-43-104V0h44z"/>
+      <path fill="url(#python-yellow)" d="M266.5 512c40.3 0 77.5-16.5 104-43 26.6-26.5 43-63.7 43-104v-42.5h-147V280h143.5c40.3 0 77.5-16.5 104-43 26.6-26.5 43-63.7 43-104 0-40.3-16.5-77.5-43-104-26.5-26.6-63.7-43-104-43h-57v63.5c0 40.3-16.5 77.5-43 104-26.5 26.6-63.7 43-104 43H62v42.5h103.5c40.3 0 77.5 16.5 104 43 26.6 26.5 43 63.7 43 104v127h-46z"/>
+      <circle cx="170" cy="85" r="28" fill="#ffffff"/>
+      <circle cx="342" cy="427" r="28" fill="#ffffff"/>
+    </g>
+    <defs>
+      <linearGradient id="python-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#387eb8"/>
+        <stop offset="100%" stop-color="#235c8b"/>
+      </linearGradient>
+      <linearGradient id="python-yellow" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ffe873"/>
+        <stop offset="100%" stop-color="#ffd43b"/>
+      </linearGradient>
+    </defs>
+  </svg>

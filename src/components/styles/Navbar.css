@@ -41,9 +41,46 @@
   font-weight: 500;
 }
 .navbar-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-weight: 700;
   font-size: 14px;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+.navbar-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #c2a4ff 0%, #7b42f6 100%);
+  color: #0b080c;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 16px rgba(194, 164, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.navbar-title:hover .navbar-badge {
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 0 0 24px rgba(194, 164, 255, 0.7);
+}
+.navbar-name {
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  background: linear-gradient(90deg, #ffffff 0%, #e2d9f3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.navbar-connect {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.navbar-connect:hover {
+  color: var(--accentColor);
+  text-shadow: 0 0 12px rgba(194, 164, 255, 0.5);
 }
 @media only screen and (min-width: 500px) {
   .header {

@@ -25,7 +25,7 @@ const WhatIDo = () => {
     };
   }, []);
   return (
-    <div className="whatIDO">
+    <div className="whatIDO" id="what-i-do">
       <div className="what-box">
         <h2 className="title">
           W<span className="hat-h2">HAT</span>
@@ -88,23 +88,22 @@ const WhatIDo = () => {
 
             <div className="what-content-in">
               <h3>DEVELOP</h3>
-              <h4>Description</h4>
+              <h4>Core Engineering</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae.
+                Developing robust software architectures, backend automation in Python, object-oriented systems in Java, and lightning-fast web applications.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
+                <div className="what-tags">Python</div>
+                <div className="what-tags">Java</div>
+                <div className="what-tags">HTML5</div>
+                <div className="what-tags">CSS3</div>
                 <div className="what-tags">JavaScript</div>
                 <div className="what-tags">TypeScript</div>
-                <div className="what-tags">Three.js</div>
                 <div className="what-tags">React</div>
-                <div className="what-tags">Css</div>
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">Next.js</div>
-                <div className="what-tags">Express.js</div>
-                <div className="what-tags">PHP</div>
-                <div className="what-tags">MySql</div>
+                <div className="what-tags">Git & GitHub</div>
+                <div className="what-tags">SQL / MySQL</div>
+                <div className="what-tags">OOP & DSA</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -129,21 +128,20 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
             <div className="what-content-in">
               <h3>DESIGN</h3>
-              <h4>Description</h4>
+              <h4>Modern UI & Motion</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae
+                Crafting pixel-perfect, ultra-smooth web interfaces with responsive layouts, modern CSS styling, silky transitions, and engaging micro-interactions.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Blender</div>
-                <div className="what-tags">Zbrush</div>
-                <div className="what-tags">UI Design</div>
-                <div className="what-tags">Motion</div>
-                <div className="what-tags">Rigging</div>
-                <div className="what-tags">3D Animation</div>
-                <div className="what-tags">Character Design</div>
-                <div className="what-tags">Modelling</div>
+                <div className="what-tags">Responsive Layouts</div>
+                <div className="what-tags">CSS3 Animations</div>
+                <div className="what-tags">Flexbox & Grid</div>
+                <div className="what-tags">UI/UX Design</div>
+                <div className="what-tags">Smooth Scrolling</div>
+                <div className="what-tags">Three.js Graphics</div>
+                <div className="what-tags">GSAP Motion</div>
+                <div className="what-tags">Performance</div>
               </div>
               <div className="what-arrow"></div>
             </div>
