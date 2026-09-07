@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+    <rect width="512" height="512" rx="100" fill="#0f141c"/>
+    <g transform="translate(130, 80) scale(1.1)">
+      <path fill="#e76f00" d="M115 170c-25 0-42 12-42 12s16-10 40-10c30 0 45 15 76 15 28 0 41-13 41-13s-14 9-39 9c-29 0-46-13-76-13z"/>
+      <path fill="#e76f00" d="M102 140c-35 0-58 17-58 17s22-14 55-14c41 0 62 20 105 20 38 0 56-18 56-18s-19 12-53 12c-40 0-64-17-105-17z"/>
+      <path fill="#5382a1" d="M85 85c-15 45 10 70 35 90 0 0-25-25-15-65 10-38 45-55 45-55s-50 7-65 30z"/>
+      <path fill="#5382a1" d="M140 60c-15 35 5 55 25 70 0 0-20-20-10-50 10-30 35-45 35-45s-38 5-50 25z"/>
+      <path fill="#e76f00" d="M50 200c0 0 35 15 90 15 50 0 95-15 95-15s-25 25-95 25c-65 0-90-25-90-25z"/>
+      <path fill="#5382a1" d="M60 215c0 0 35 15 80 15 45 0 75-15 75-15s-20 20-75 20c-50 0-80-20-80-20z"/>
+    </g>
+    <text x="256" y="420" fill="#f89820" font-family="Arial, sans-serif" font-weight="900" font-size="80" text-anchor="middle" letter-spacing="4">JAVA</text>
+  </svg>
