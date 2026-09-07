@@ -31,41 +31,53 @@ export class SplitText {
 
     this.elements.forEach((el) => {
       this.originals.push(el.innerHTML);
-      const text = el.innerText || el.textContent || "";
+      const text = (el.innerText || el.textContent || "").trim();
       el.innerHTML = "";
 
-      const wordsArray = text.split(" ");
-      wordsArray.forEach((w, wIdx) => {
-        const wordSpan = document.createElement("span");
-        wordSpan.style.display = "inline-block";
-        wordSpan.style.position = "relative";
-        wordSpan.style.whiteSpace = "nowrap";
+      const linesArray = text
+        .split(/\r?\n/)
+        .map((l) => l.trim())
+        .filter((l) => l.length > 0);
 
-        if (type.includes("chars")) {
-          for (let i = 0; i < w.length; i++) {
-            const charSpan = document.createElement("span");
-            charSpan.style.display = "inline-block";
-            charSpan.style.position = "relative";
-            charSpan.textContent = w[i];
-            wordSpan.appendChild(charSpan);
-            this.chars.push(charSpan);
-          }
-        } else {
-          wordSpan.textContent = w;
-        }
-
+      linesArray.forEach((lineText) => {
+        const lineDiv = document.createElement("div");
+        lineDiv.style.display = "block";
+        lineDiv.style.position = "relative";
         if (linesClass) {
-          wordSpan.classList.add(linesClass);
+          lineDiv.classList.add(linesClass);
         }
 
-        el.appendChild(wordSpan);
-        this.words.push(wordSpan);
+        const wordsArray = lineText.split(/\s+/).filter((w) => w.length > 0);
+        wordsArray.forEach((w, wIdx) => {
+          const wordSpan = document.createElement("span");
+          wordSpan.style.display = "inline-block";
+          wordSpan.style.position = "relative";
+          wordSpan.style.whiteSpace = "nowrap";
 
-        if (wIdx < wordsArray.length - 1) {
-          el.appendChild(document.createTextNode(" "));
-        }
+          if (type.includes("chars")) {
+            for (let i = 0; i < w.length; i++) {
+              const charSpan = document.createElement("span");
+              charSpan.style.display = "inline-block";
+              charSpan.style.position = "relative";
+              charSpan.textContent = w[i];
+              wordSpan.appendChild(charSpan);
+              this.chars.push(charSpan);
+            }
+          } else {
+            wordSpan.textContent = w;
+          }
+
+          lineDiv.appendChild(wordSpan);
+          this.words.push(wordSpan);
+
+          if (wIdx < wordsArray.length - 1) {
+            lineDiv.appendChild(document.createTextNode(" "));
+          }
+        });
+
+        el.appendChild(lineDiv);
+        this.lines.push(lineDiv);
       });
-      this.lines.push(el);
     });
   }
 
