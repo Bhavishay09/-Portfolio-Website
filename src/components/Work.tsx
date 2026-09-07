@@ -2,6 +2,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import "./styles/Work.css";
 import WorkImage from "./WorkImage";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import { getAssetPath } from "../utils/assets";
 
 const projects = [
   {
@@ -9,7 +10,7 @@ const projects = [
     title: "Python Automation & AI Pipeline",
     category: "Python / Backend Automation",
     tools: "Python, AsyncIO, REST APIs, Automation Scripts",
-    image: "/images/project-1.png",
+    image: getAssetPath("images/project-1.png"),
     link: "https://github.com/bhavishay09",
   },
   {
@@ -17,7 +18,7 @@ const projects = [
     title: "Java Core Enterprise Engine",
     category: "Java / OOP Architecture",
     tools: "Java, Multithreading, OOP Principles, Data Pipelines",
-    image: "/images/project-2.png",
+    image: getAssetPath("images/project-2.png"),
     link: "https://github.com/bhavishay09",
   },
   {
@@ -25,7 +26,7 @@ const projects = [
     title: "Ultra-Smooth Responsive Web UI",
     category: "Frontend Web Engineering",
     tools: "HTML5, Modern CSS3, Responsive Design, Micro-animations",
-    image: "/images/project-3.png",
+    image: getAssetPath("images/project-3.png"),
     link: "https://github.com/bhavishay09",
   },
   {
@@ -33,7 +34,7 @@ const projects = [
     title: "Algorithm & DSA Visualizer",
     category: "Algorithms & Logic",
     tools: "Java, Python, Graph & Sorting Algorithms, Canvas",
-    image: "/images/project-4.png",
+    image: getAssetPath("images/project-4.png"),
     link: "https://github.com/bhavishay09",
   },
   {
@@ -41,7 +42,7 @@ const projects = [
     title: "Full-Stack Data Platform",
     category: "Full Stack Development",
     tools: "Python, React, MySQL, REST Services, Clean UI",
-    image: "/images/project-5.png",
+    image: getAssetPath("images/project-5.png"),
     link: "https://github.com/bhavishay09",
   },
   {
@@ -49,7 +50,7 @@ const projects = [
     title: "Interactive 3D Portfolio Experience",
     category: "Creative Web Graphics",
     tools: "React, Three.js, Rapier Physics, Smooth Scrolling",
-    image: "/images/project-6.png",
+    image: getAssetPath("images/project-6.png"),
     link: "https://github.com/bhavishay09",
   },
 ];

@@ -3,11 +3,12 @@ import { useRef, useMemo, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment } from "@react-three/drei";
 import { EffectComposer, N8AO } from "@react-three/postprocessing";
+import { getAssetPath } from "../utils/assets";
 
 const textureLoader = new THREE.TextureLoader();
 
 const loadTexture = (path: string) => {
-  const tex = textureLoader.load(path);
+  const tex = textureLoader.load(getAssetPath(path));
   tex.colorSpace = THREE.SRGBColorSpace;
   return tex;
 };
@@ -540,7 +541,7 @@ function ConstellationScene({
         />
       ))}
       <Environment
-        files="/models/char_enviorment.hdr"
+        files={getAssetPath("models/char_enviorment.hdr")}
         environmentIntensity={0.6}
         environmentRotation={[0, 4, 2]}
       />
@@ -552,14 +553,14 @@ function ConstellationScene({
 }
 
 const skillsList = [
-  { name: "Python", icon: "/images/python.png" },
-  { name: "Java", icon: "/images/java.png" },
-  { name: "HTML5", icon: "/images/html5.png" },
-  { name: "CSS3", icon: "/images/css3.png" },
-  { name: "JavaScript", icon: "/images/javascript.webp" },
-  { name: "TypeScript", icon: "/images/typescript.webp" },
-  { name: "React", icon: "/images/react2.webp" },
-  { name: "MySQL", icon: "/images/mysql.webp" },
+  { name: "Python", icon: getAssetPath("images/python.png") },
+  { name: "Java", icon: getAssetPath("images/java.png") },
+  { name: "HTML5", icon: getAssetPath("images/html5.png") },
+  { name: "CSS3", icon: getAssetPath("images/css3.png") },
+  { name: "JavaScript", icon: getAssetPath("images/javascript.webp") },
+  { name: "TypeScript", icon: getAssetPath("images/typescript.webp") },
+  { name: "React", icon: getAssetPath("images/react2.webp") },
+  { name: "MySQL", icon: getAssetPath("images/mysql.webp") },
 ];
 
 const TechStack = () => {

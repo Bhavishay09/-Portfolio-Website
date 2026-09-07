@@ -1,5 +1,8 @@
 import * as THREE from "three";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function setCharTimeline(
   character: THREE.Object3D<THREE.Object3DEventMap> | null,
@@ -85,10 +88,23 @@ export function setCharTimeline(
           { pointerEvents: "none", x: "-12%", delay: 2, duration: 5 },
           0
         )
-        .to(character.rotation, { y: 0.92, x: 0.12, delay: 3, duration: 3 }, 0)
-        .to(neckBone!.rotation, { x: 0.6, delay: 2, duration: 3 }, 0)
-        .to(monitor.material, { opacity: 1, duration: 0.8, delay: 3.2 }, 0)
-        .to(screenLight.material, { opacity: 1, duration: 0.8, delay: 4.5 }, 0)
+        .to(character.rotation, { y: 0.92, x: 0.12, delay: 3, duration: 3 }, 0);
+      if (neckBone) {
+        tl2.to(neckBone.rotation, { x: 0.6, delay: 2, duration: 3 }, 0);
+      }
+      if (monitor?.material) {
+        tl2.to(monitor.material, { opacity: 1, duration: 0.8, delay: 3.2 }, 0);
+        tl2.fromTo(
+          monitor.position,
+          { y: -10, z: 2 },
+          { y: 0, z: 0, delay: 1.5, duration: 3 },
+          0
+        );
+      }
+      if (screenLight?.material) {
+        tl2.to(screenLight.material, { opacity: 1, duration: 0.8, delay: 4.5 }, 0);
+      }
+      tl2
         .fromTo(
           ".what-box-in",
           { display: "none" },
@@ -96,7 +112,7 @@ export function setCharTimeline(
           0
         )
         .fromTo(
-          monitor.position,
+          monitor ? monitor.position : { y: 0, z: 0 },
           { y: -10, z: 2 },
           { y: 0, z: 0, delay: 1.5, duration: 3 },
           0
